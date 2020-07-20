@@ -1,0 +1,58 @@
+openapi: 3.0.0
+info:
+  title: Demo users API
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:3000/'
+paths:
+  /users:
+    get:
+      description: Get all users
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json: {}
+          headers: {}
+    post:
+      description: Create a user
+      responses:
+        '201':
+          description: Success
+          content:
+            application/json: {}
+          headers: {}
+        '400':
+          description: Missing data
+          content:
+            application/json: {}
+          headers: {}
+  '/users/{id}':
+    get:
+      description: Get a user
+      responses:
+        '200':
+          description: Get userId 2
+          content:
+            application/json: {}
+          headers: {}
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+    delete:
+      description: Delete a user
+      responses:
+        '204':
+          description: User deleted
+          content:
+            application/json: {}
+          headers: {}
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
